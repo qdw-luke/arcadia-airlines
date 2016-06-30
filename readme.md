@@ -70,7 +70,22 @@ After this point, the file will be yours so be aware if you open someone elses f
 You will notice QlikView is the only system where I actually couldn't colors to work. so theres a challenge. 
 
 ##Loading the data
-If you scrolled,
+If you scrolled this far down, it probably means you wanted to work with the raw data. So go ahead and download the files from [Airline Origin and Destination Survey](http://www.transtats.bts.gov/DatabaseInfo.asp?DB_ID=125) and get them saved somewhere.
+
+There are two scripts for data loading. 
+
+1. `datafile.py`: this python script generates a CSV with each origin/destination pair and the total tickets, total paid fare, and Avg fare. the resulting CSV should be about 2704 lines long which is exactly 52^2. Now why 52, well not every state has an airport and not every state actually flies to every other state so the exact number will vary based on the files you are using. also there are several non-state entries such as US Pacific Territories, which I presume to be guam. 
+
+check out the top section of `datafile.py`. You will need update the variables for `data_paths` which is a list of all the files you want to load and  `out_path` which is the name of the output file that you want. note that we are using `os.path.join` so you do not need to explicitly state the directory just seperate each component with a comma. this helps ensure compatability in multiple systems. for instance if you wanted to start in your home directory and navigate to a file as in '.\Documents\Arcadia\Somefile.docx' you express that as `os.path.join(os.curdir,'Documents','Arcadia','Somefile.docx')`
+
+Running the datafile creates a python dictionary where each key is a unique combo of origin and destination and the value is a tuple with the data. 
+
+Data file takes about 5-8  min to load. 
+
+
+2. `airlines_sql_load.py`: 
+This file simply loads the data from a flat and sends it off sql to server. This won't work on non-windows machines. Make sure you set-up a odbc DSN and put the parameter in the connector on line 31. 
+
 
 
 
