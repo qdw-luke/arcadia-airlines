@@ -47,7 +47,30 @@ Prerequisites for Use Case 3:
 * You will need python installed on your machine. You have some choices here. There is the offical [Python for Windows](https://www.python.org/downloads/release/python-2712/) distribution. You may also consider the [Anaconda](https://www.continuum.io/downloads) distrubtuion which has several packages already included and is optimized for Data Science. I don't have anaconda and the instructions below would be slightly different using `conda` as opposed to standard python tools. Please install python 2.7 rather than python 3. Although python 3 is faster it is not backward compatible and some of this code may not work. 
 * open a console or command line and navigate to a directory where you want to do this work. 
 * checkout this package using git:
-`git clone 
+`git clone https://github.com/qdw-luke/arcadia-airlines.git`
+* go into the project directory
+* make sure you have virtualenv installed virtualenv helps keep your python projects from stepping on each other. enter `pip install virtualenv` if pip doesn't work start googling. use [this page](http://docs.python-guide.org/en/latest/dev/virtualenvs/) for help
+* with virtualenv install you now initialize the environement. This wil create a folder to contain packages specific to the environment. 
+`virtualenv env`
+* if all went well, we will now activate the virtual environement. 
+windows: `.\env\Scripts\activate` 
+Linux/Mac: `source ./env/Scripts/activate`
+* Now with our own fresh environement we get to install pre-requisite packages which are listed in an inventory. If you are familar with ruby this the same as gems. 
+`pip install -r requirements.txt`
+* Assuming you got no errors thus far lets go ahead and just run the app: `python airline_bokeh.py` this should run and open a page in your browser. You are now set-up to play with it. 
+
+The bokeh packages have a few parts. airline_bokeh.py controls the creation of the visual and outputs it as a static html page called routes.html. 
+
+##Use Case 4: QlikView
+
+So QlikView is a commercial BI platform that has really wide-usage in many industries. The personal edition is free so you can go ahead and download it at [Qlikview](http://www.qlik.com/try-or-buy/download-qlikview). They will make you register and they will SPAM you so be careful. Qlik personal is fully functional except they will not let you share files. So you go ahead and open the ArcadiaAirlines.qvw file thorugh which you will take ownership of it. 
+
+After this point, the file will be yours so be aware if you open someone elses file it may lock you out of other files created by other users. 
+
+You will notice QlikView is the only system where I actually couldn't colors to work. so theres a challenge. 
+
+##Loading the data
+If you scrolled,
 
 
 
