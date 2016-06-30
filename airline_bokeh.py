@@ -63,6 +63,12 @@ p.xaxis.major_label_orientation = pi/3
 p.rect("origin", "destination", 1, 1, source=source,
        color=colors, line_color=None)
 
+p.select_one(HoverTool).tooltips = [
+    ('Origin', '@origin'),
+    ('Destination', '@destination'),
+    ('Fare', '@rate')
+]
+
 output_file('routes.html', title="Airline Routes  example")
 
 show(p)
