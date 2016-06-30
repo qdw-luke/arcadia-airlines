@@ -1,7 +1,6 @@
 from math import pi
 import os
 import csv 
-
 from bokeh.models import HoverTool
 from bokeh.plotting import ColumnDataSource, figure, show, output_file
 
