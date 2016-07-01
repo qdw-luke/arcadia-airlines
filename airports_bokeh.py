@@ -5,6 +5,7 @@ from bokeh.models import HoverTool
 from bokeh.plotting import ColumnDataSource, figure, show, output_file, save
 import pyodbc
 import numpy as np
+from bokeh.sampledata.us_states import data as states
 
 data_path = os.path.join(os.curdir, 'data', 'Output1.csv')
 coord_path = os.path.join(os.curdir, 'data', 'airports.csv')
@@ -12,6 +13,9 @@ coord_path = os.path.join(os.curdir, 'data', 'airports.csv')
 origins = {}
 coord_data = {}
 
+
+state_xs = [states[code]["lons"] for code in states]
+state_ys = [states[code]["lats"] for code in states]
 
 
 
@@ -43,19 +47,28 @@ lats = []
 longs = []
 radius = []
 
+# for airport in airports:
+# 	if airport in coord_data.keys():
+# 		names.append(airport)
+# 		latitude, longitude = coord_data[airport]
+# 		if latitude <= 0:
+# 			latitude = abs(latitude) + 90
+# 		lats.append(latitude)
+# 		if longitude <= 0:
+# 			longitude = 180 + longitude
+# 		else:
+# 			longitude = longitude + 180
+# 		longs.append(longitude)
+# 		radius.append(origins[airport])
+
 for airport in airports:
 	if airport in coord_data.keys():
 		names.append(airport)
 		latitude, longitude = coord_data[airport]
-		if latitude <= 0:
-			latitude = abs(latitude) + 90
 		lats.append(latitude)
-		if longitude <= 0:
-			longitude = 180 + longitude
-		else:
-			longitude = longitude + 180
 		longs.append(longitude)
 		radius.append(origins[airport])
+
 
 
 radius_max = max(radius)
@@ -83,8 +96,11 @@ p = figure(title="AirportPlot", plot_width=1080, plot_height=540,
            tools=TOOLS)
 
 
-p.circle_cross(x="longs", y="lats", size="radius", source=source,
+p.circle(x="longs", y="lats", size="radius", source=source,
                   color="colors", fill_alpha=0.2, line_width=2)
+
+p.patches(state_xs, state_ys, fill_alpha=0.0,
+          line_color="#884444", line_width=2, line_alpha=0.3)
 
 
 p.select_one(HoverTool).tooltips = [
@@ -96,5 +112,6 @@ p.select_one(HoverTool).tooltips = [
 
 
 output_file('airports.html', title="Airline Routes  example")
+
 
 save(p)
