@@ -61,6 +61,8 @@ Linux/Mac: `source ./env/Scripts/activate`
 
 The bokeh packages have a few parts. airline_bokeh.py controls the creation of the visual and outputs it as a static html page called routes.html. 
 
+http://nbviewer.jupyter.org/github/qdw-luke/arcadia-airlines/blob/jupyter/ArcadiaAirlines.ipynb
+
 ##Use Case 4: QlikView
 
 So QlikView is a commercial BI platform that has really wide-usage in many industries. The personal edition is free so you can go ahead and download it at [Qlikview](http://www.qlik.com/try-or-buy/download-qlikview). They will make you register and they will SPAM you so be careful. Qlik personal is fully functional except they will not let you share files. So you go ahead and open the ArcadiaAirlines.qvw file thorugh which you will take ownership of it. 
