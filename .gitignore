@@ -7,7 +7,7 @@ __pycache__/
 *.so
 *.suo
 
-
+readme.html
 
 # Distribution / packaging
 .Python
