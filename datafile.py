@@ -5,7 +5,7 @@ import datetime
 
 
 data_paths = [os.path.join(os.pardir,'randomdata','Origin_and_Destination_Survey_DB1BMarket_2015_1.csv'), os.path.join(os.pardir,'randomdata','Origin_and_Destination_Survey_DB1BMarket_2015_2.csv'), os.path.join(os.pardir,'randomdata','Origin_and_Destination_Survey_DB1BMarket_2015_3.csv'), os.path.join(os.pardir,'randomdata','Origin_and_Destination_Survey_DB1BMarket_2015_4.csv')]
-out_path =  os.path.join(os.pardir,'randomdata','Output1.csv')
+out_path =  os.path.join(os.pardir,'randomdata','Output2.csv')
 states = []
 data_sums = {}
 origins = {}
