@@ -107,3 +107,6 @@ This file simply loads the data from a flat and sends it off sql to server. This
 * https://github.com/fasouto/awesome-dataviz Great Resource
 * http://blog.revolutionanalytics.com/2016/08/five-great-charts-in-5-lines-of-r-code-each.html Great R Examples
 
+
+
+end of readme
