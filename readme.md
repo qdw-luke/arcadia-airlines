@@ -2,7 +2,7 @@
 
 :airplane:
 
-*We hope you are getting excited for the datathon coming up on August 19. To help get you prepared, we have put together four challenging implementation of the same data visualization project involving analyzing domestic US airfares. It may not be healthcare related but it should be a lot of fun.*
+*We hope you are getting excited for the datathon coming up on October 20 To help get you prepared, we have put together four challenging implementation of the same data visualization project involving analyzing domestic US airfares. It may not be healthcare related but it should be a lot of fun.*
 
 ##Research Question
 
