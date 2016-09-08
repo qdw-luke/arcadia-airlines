@@ -40,6 +40,8 @@ If you have everything running, feel free to open ssrs/ArcadiaAirlineReporting/A
 
 But before you edit and run the report you will need to load the data so skip down to Loading the Data at the bottom. 
 
+You can preview the report right in Visual Studio but also you can upload it here http://lshulman-pc/Reports/ of course put your own Computer in there. 
+
 ##Use case 3: Python Bokeh
 
 So this is the most technical of the use cases. [Bokeh](http://bokeh.pydata.org/en/latest/) is one of 15 python libraries that are in the pantheon of amazing tools for data science. It provides a rich data visualization libary very much like [D3](https://d3js.org/) but it offers some differences that may make it easier to use because you don't need to directly interface with the DOM or frankly learn javascript. 
