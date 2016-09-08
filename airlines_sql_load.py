@@ -13,6 +13,18 @@ data_sums = {}
 origins = {}
 destinations = {}
 avg_tup = namedtuple('avg_tup', ['TotalFare', 'TotalTickets', 'AvgFare'])
+
+create_table = """ 
+CREATE TABLE [dbo].[routes](
+	[AirportGroup] [nchar](50) NULL,
+	[OriginAirportCode] [nchar](10) NULL,
+	[Origin][nchar](50) null,
+	[Destination] [nchar](50) NULL,
+	[DestAirportCode] [nchar](10) NULL,
+	[Fare] numeric NULL,
+	[Passengers] numeric NULL,
+	[Miles] numeric NULL
+) """
 insert_template = Template("""
 INSERT INTO [dbo].[routes]
            ([AirportGroup]
@@ -23,7 +35,7 @@ INSERT INTO [dbo].[routes]
            ,[Fare]
            ,[Passengers]
            ,[Miles])
-		VALUES ('$AirportGroup', '$OriginAiportCode', '$Origin', '$Destination', '$DestAirportCode', '$Fare', '$Passengers', '$Miles')
+		VALUES ('$AirportGroup', '$OriginAiportCode', '$Origin', '$Destination', '$DestAirportCode', $Fare, $Passengers, $Miles)
 		"""
 		)
 routes = []
@@ -40,7 +52,7 @@ for data_path in data_paths:
 		for x in reader:
 			x_dic = x
 			s_pair = x_dic['OriginStateName'] + ':' + x_dic['DestStateName']
-			insert_string = insert_template.substitute(AirportGroup=x_dic['AirportGroup'], OriginAiportCode=x_dic['Origin'], Origin=x_dic['OriginStateName'], Destination=x_dic['DestStateName'], DestAirportCode=x_dic['Dest'], Fare=x_dic['MktFare'], Passengers=x_dic['Passengers'], Miles=x_dic['MktMilesFlown'])
+			insert_string = insert_template.substitute(AirportGroup=x_dic['AirportGroup'], OriginAiportCode=x_dic['Origin'], Origin=x_dic['OriginStateName'], Destination=x_dic['DestStateName'], DestAirportCode=x_dic['Dest'], Fare=float(x_dic['MktFare']), Passengers=float(x_dic['Passengers']), Miles=float(x_dic['MktMilesFlown']))
 			cursor.execute(insert_string)
 			cursor.commit()
 

@@ -21,7 +21,7 @@ if you want the raw data you will have to download it from that link. I have sum
 Each of the examples included work on the Output1.csv file. but i have also included a file that will work with the raw data if you are interested. The raw data may be accessed from the link above. 
 
 ##Use Case 1: Excel
-We make fun of excel with its silly limits but it can actually do a lot.  Open the file data/"ArcadiaAirline Analysis.xlsx" and take a look. 
+We make fun of excel with its silly limits but it can actually do a lot.  Open the file "ArcadiaAirline Analysis.xlsx" and take a look. 
 
 The worksheet output1 is exactly a copy of the csv data. the diagram is created from using the TRANSPOSE function and each cell is populated with a VLOOKUP. 
 
