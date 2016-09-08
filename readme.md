@@ -31,8 +31,10 @@ Some fancy formatting and then we got it.
 
 SQL Server comes bundled with BI package called Sql Server Reporting Services (SSRS). While we don't have access to the latest version, SSRS does have some robust tools and when paired with SQL server it actually was very easy to make this visualization. First some quick prerequisites: 
 
-* You will need SQL Server Developer edition installed along with Sql Server Reporting Services. 
+* You will need SQL Server  installed along with Sql Server Reporting Services. 
 * You will also need [Sql Server Data tools](https://msdn.microsoft.com/en-us/library/mt204009.aspx) which is an add-on to visual studio 
+
+Both of these are bundled in the express edition which you can download from microsoft. 
 
 If you have everything running, feel free to open ssrs/ArcadiaAirlineReporting/ArcadiaAirlineReporting.sln
 
@@ -61,7 +63,14 @@ Linux/Mac: `source ./env/Scripts/activate`
 
 The bokeh packages have a few parts. airline_bokeh.py controls the creation of the visual and outputs it as a static html page called routes.html. 
 
-http://nbviewer.jupyter.org/github/qdw-luke/arcadia-airlines/blob/jupyter/ArcadiaAirlines.ipynb
+alternativaly we can use the interactive Notebook to look at the graph. These are called Jupyter Notebooks. 
+
+run `jupyter notebook`
+
+a browser should open and then select ArcadiaAirlines.ipynb
+
+Alternatively, you can view the output at the below: 
+http://nbviewer.jupyter.org/github/qdw-luke/arcadia-airlines/blob/master/ArcadiaAirlines.ipynb
 
 ##Use Case 4: QlikView
 
