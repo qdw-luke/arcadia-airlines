@@ -82,6 +82,24 @@ After this point, the file will be yours so be aware if you open someone elses f
 
 You will notice QlikView is the only system where I actually couldn't colors to work. so theres a challenge. 
 
+##Use Case 5: D3.js
+
+D3 is amazing visualzation library written in Javascrip which is the most supported language for browser scripting and interaction. This means that you get a rich set of features in an instant web application. 
+
+You can see the amazing [D3 Gallery](https://bl.ocks.org/mbostock) for real code examples that you can use as blocks. 
+
+To run the D3 use case, open a command window and naviage into the d3 folder. There you will see `index.html` which is a simple blank html webpage that envokes the javascript `scripts/aircadia.js` This is the javascript that create html `<svg>` tags that render the visualization but D3 does that magic for you. So as a data developer you aren't creating specific `<rect>` tags. Rather you are allowing D3 to build those automatically using variables that you define. 
+
+Take a look a the script. 
+
+1. In the first part, we declare basic variables including the height/width of the chart, the location of the data and the colors we want to use.
+2. We then tell D3 to create svgs using those variables we defined above. Also we prepare it to have tooltips.
+3. This is guts of everything a function that we write called `heatmapchart`. As you look at it, Omar has added some nice comment `//MAGIC HERE` this is where we inform d3 how to draw all 2500 squares (it figures that out) index matches the states and color based on the values. Line 90 changes all th efill attributes of the cards to be based on the colorscale. 
+
+You may be able to run this directly by simply opening `index.html` in your browser. But if you can't, you will need to run a simple webserver to serve up the assets. from the command line in the d3 folder try running `python -m SimpleHTTPServer` and visit `localhost:8000` to see. 
+
+
+
 ##Loading the data
 If you scrolled this far down, it probably means you wanted to work with the raw data. So go ahead and download the files from [Airline Origin and Destination Survey](http://www.transtats.bts.gov/DatabaseInfo.asp?DB_ID=125) and get them saved somewhere.
 
